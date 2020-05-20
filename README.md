@@ -35,8 +35,6 @@ allocator.
 
 ## Allocator Features
 
-The allocator's features:
-  
   * The allocator uses different pools of (free) memory to fulfill the various memory allocation requests, depending on the requested sizes for the memory blocks. More precisely, there are 4 different pools:
 	- Pool 0: for requests ≤ 64 bytes
 	- Pool 1: for requests ≤ 256 bytes (and ≥ 65 bytes)
