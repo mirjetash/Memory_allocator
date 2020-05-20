@@ -1,12 +1,11 @@
 ## Introduction
 
 The files allocX.in, included in the directory **tests**, are examples
-of inputs for the program **mem_shell**. Do not hesitate to write your
-own scenarios. A short description of each of these files is given
+of inputs for the program **mem_shell**. A short description of each of these files is given
 below.
 
 The program **mem\_shell\_sim** included in the directory **./bin**
-generates the expected trace for a given input and thus allows you to
+generates the expected trace for a given input and thus allows to
 check whether your program works as expected.
 
 Note that the program **mem_shell** can also be run interactively
@@ -33,17 +32,10 @@ simply run (for the case of alloc1.in):
 make -B tests/alloc1.test
 ```
 
-## Configuring a test
-
-Note that the file **Makefile.config** includes the definition of the
-main parameters of the allocator. You can change the value of these
-parameters to test your allocator under different conditions.
-
 ## Specification of the expected output
 
 The program **mem\_shell\_sim** makes a few assumption when generating
-the trace for a test case. **You have to follow the same rules in your
-implementation for it to be considered as correct**.
+the trace for a test case. 
     
   * Calling memory_alloc() with a size of 0 returns a valid pointer that can later be freed.
   * If memory_alloc() does not manage to allocate a block, the program terminates with a call to exit(0). 
