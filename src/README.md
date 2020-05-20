@@ -1,5 +1,3 @@
-This is the README file for the memory allocator project of the OS course in M1 Mosig.
-
 ## About tests
 
 Please read [README_tests](./README_tests.html) for a description of the provided tests and
@@ -32,22 +30,13 @@ Please read the Makefile directly for more information.
 ### Configuring properties
 
 The file *Makefile.config* defines the main properties of the memory
-allocator. You can modify this file to change the properties of your
+allocator. You can modify this file to change the properties of the
 allocator (for instance, regarding the policy applied to the standard
-pool). Do not forget to recompile your code after any modification
-made to this file.
-
-Note that a property can also be changed from the command line when
-calling `make` (without editing the Makefile). Here is an exemple that selects the *next fit* strategy:
-```
-    make -B STDPOOL_POLICY=NF mem_shell
-```
-
-***
+pool). 
 
 ## List of provided files
 
-  * *mem_alloc.h*: The interface of your allocator.
+  * *mem_alloc.h*: The interface of the allocator.
   
   * *mem_alloc_types.h*: The data types used by the allocator.
   
@@ -63,9 +52,9 @@ calling `make` (without editing the Makefile). Here is an exemple that selects t
   
   * *my_mmap.h* and *my_mmap.c*: Wrapper code for simplifying the usage of mmap.
   
-  * *mem_alloc_std.c*: Re-implements default allocation (malloc, free, ...) so that existing programs can be run with your allocator.
+  * *mem_alloc_std.c*: Re-implements default allocation (malloc, free, ...) so that existing programs can be run with the allocator.
   
-  * *mem_shell.c*: a simple program to test your allocator.
+  * *mem_shell.c*: a simple program to test the allocator.
   
   * *bin/mem_shell_sim*: Program that generates the expected trace
     for a scenario
