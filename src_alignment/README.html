@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p>This is the README file for the memory allocator project of the OS course in M1 Mosig.</p>
+<h2 id="about-tests">About tests</h2>
+<p>Please read <a href="./README_tests.html">README_tests</a> for a description of the provided tests and how to run them.</p>
+<h2 id="compiling-the-code">Compiling the code</h2>
+<p>A Makefile is provided to automatically build the memory allocator and run tests.</p>
+<h3 id="basic-commands">Basic commands</h3>
+<p>To run a test, simply use the following command:</p>
+<pre><code>    make -B tests/alloc1.test</code></pre>
+<p>To simply build the interective shell, run:</p>
+<pre><code>    make -B mem_shell</code></pre>
+<p><strong>Note</strong>: It is important to use option <code>-B</code> when running <code>make</code> to force all files to be recompiled and be sure that all your changes have been taken into account.</p>
+<p>Please read the Makefile directly for more information.</p>
+<h3 id="configuring-properties">Configuring properties</h3>
+<p>The file <em>Makefile.config</em> defines the main properties of the memory allocator. You can modify this file to change the properties of your allocator (for instance, regarding the policy applied to the standard pool). Do not forget to recompile your code after any modification made to this file.</p>
+<p>Note that a property can also be changed from the command line when calling <code>make</code> (without editing the Makefile). Here is an exemple that selects the <em>next fit</em> strategy:</p>
+<pre><code>    make -B STDPOOL_POLICY=NF mem_shell</code></pre>
+<hr />
+<h2 id="list-of-provided-files">List of provided files</h2>
+<ul>
+<li><p><em>mem_alloc.h</em>: The interface of your allocator.</p></li>
+<li><p><em>mem_alloc_types.h</em>: The data types used by the allocator.</p></li>
+<li><p><em>mem_alloc.c</em>: Creates the different pools and provides the dispatcher functions to invoke the approriate pool for a given request.</p></li>
+<li><p><em>mem_alloc_fast_pool.h</em>: The data types used by the code in charge of the fast pools.</p></li>
+<li><p><em>mem_alloc_fast_pool.c</em>: The code for the management of fast pools.</p></li>
+<li><p><em>mem_alloc_standard_pool.h</em> and <em>mem_alloc_standard_pool_types.c</em>: The data types and helper functions used by the code in charge of the standard pools.</p></li>
+<li><p><em>mem_alloc_standard_pool.c</em>: The code for the management of the standard pool.</p></li>
+<li><p><em>my_mmap.h</em> and <em>my_mmap.c</em>: Wrapper code for simplifying the usage of mmap.</p></li>
+<li><p><em>mem_alloc_std.c</em>: Re-implements default allocation (malloc, free, …) so that existing programs can be run with your allocator.</p></li>
+<li><p><em>mem_shell.c</em>: a simple program to test your allocator.</p></li>
+<li><p><em>bin/mem_shell_sim</em>: Program that generates the expected trace for a scenario</p></li>
+<li><p><em>tests/allocX.in</em>: Test scenarios</p></li>
+<li><p><em>Makefile</em>: Rules to build the project</p></li>
+<li><p><em>Makefile.config</em>: Definition of the (default) parameters of the memory allocator</p></li>
+<li><p><em>README.md</em>: this file</p></li>
+<li><p><em>README_tests.md</em>: Readme file about the tests</p></li>
+</ul>
+</body>
+</html>
