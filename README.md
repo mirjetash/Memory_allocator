@@ -2,37 +2,6 @@
 
 A Dynamic memory allocator in C.
 
-## Tests
-Please read [README_tests](./README_tests.html) for a description of the provided tests and how to run them.
-
-## Compiling the code
-
-A Makefile is provided to automatically build the memory allocator and
-run tests.
-
-### Basic commands
-
-To run a test, simply use the following command:
-```
-    make -B tests/alloc1.test
-```
-
-To simply build the interective shell, run:
-```
-    make -B mem_shell
-```
-
-**Note**: It is important to use option `-B` when running `make` to
-force all files to be recompiled and be sure that all your changes have
-been taken into account.
-
-Please read the Makefile directly for more information.
-
-### Configuring properties
-
-The file *Makefile.config* defines the main properties of the memory
-allocator.
-
 ## Allocator Features
 
   * The allocator uses different pools of (free) memory to fulfill the various memory allocation requests, depending on the requested sizes for the memory blocks. More precisely, there are 4 different pools:
