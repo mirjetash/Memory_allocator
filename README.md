@@ -49,7 +49,9 @@ allocator.
   * Pool 3 is based on a free-list of variable-sized blocks. The block chosen to satisfy an allocatio request is selected according to a specific policy (e.g., first fit), split if necessary and, when freed is immediately coalesced with other adjacent free blocks (if any).
 
 
-
+### Directory content:
+  *  ./src:  simple version of the allocator where one can allocate and manage memory in Pool 0,1,2. Based on the principle of linking free memory blocks with a singly linked list. The blocks of a pool are never split or coalesced. To fulfill a request a LIFO policy is applied in select the block.  
+  *  ./src_alignment: a more advanced version of the allocator where there are additional Alignment Constraints.
 
 
 
